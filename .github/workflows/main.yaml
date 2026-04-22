@@ -9,20 +9,27 @@ jobs:
   release:
     permissions:
       contents: write
+      pages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.PRIVATE_REPO_SECRET }}
+          submodules: true
 
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git submodule update --init
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
+        with:
+          charts_dir: charts
+          config: .github/workflows/cr.yaml
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "${{ secrets.PRIVATE_REPO_SECRET }}"
