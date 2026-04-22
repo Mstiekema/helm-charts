@@ -1,0 +1,3 @@
+[submodule "charts/rustfs-nginx-static-site"]
+	path = charts/rustfs-nginx-static-site
+	url = git@github.com:Mstiekema/rustfs-nginx-static-site.git
