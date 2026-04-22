@@ -4,7 +4,7 @@ Welcome to my helm chart repository!
 
 ## Charts
 
-- None
+- [rustfs-nginx-static-site](https://github.com/Mstiekema/rustfs-nginx-static-site)
 
 ## Usage
 
