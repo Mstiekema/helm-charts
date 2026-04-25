@@ -4,7 +4,7 @@ Welcome to my helm chart repository!
 
 ## Charts
 
-- [rustfs-nginx-static-site](https://github.com/Mstiekema/rustfs-nginx-static-site)
+- [k8s-static-sites](https://github.com/Mstiekema/k8s-static-sites)
 
 ## Usage
 
@@ -46,7 +46,7 @@ helmCharts:
   - name: CHART_NAME
     releaseName: RELEASE_NAME
     namespace: default
-    repo: https://Mstiekema.github.io/helm-charts
+    repo: https://charts.mstiekema.nl
     version: v0.0.0
     valuesFile: values.yaml
 ```
